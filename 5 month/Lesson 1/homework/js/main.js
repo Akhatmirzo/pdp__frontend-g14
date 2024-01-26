@@ -1,149 +1,180 @@
-// ? Local Storage
-// ? setItem
-// localStorage.setItem("user", "Akhatmirzo");
-// localStorage.setItem("user2", "Akhatmirzo");
-// localStorage.setItem("user3", "Akhatmirzo");
+const membersEl = document.getElementById('members');
+const formEl = document.getElementById('formEl');
+const formCash = document.getElementById('formCash');
+const info = document.getElementById('info');
+const editModalEl = document.querySelector('.editModal');
+const userSelect = document.getElementById('userSelect');
 
-// ? getItem
-// const user = localStorage.getItem("user");
-// console.log(user);
+// Members Db
+const members = JSON.parse(localStorage.getItem('members')) || [];
+// MembersShip Db
+const membersShip = JSON.parse(localStorage.getItem('membersShip')) || [];
 
-// ? removeItem
-// localStorage.removeItem("user");
+// ! GYM App Functions
+// * Generate Id for GYM
+const generateIds = JSON.parse(localStorage.getItem('generateIds')) || [];
+function generateId() {
+    const generateIdLength = Math.floor(Math.random() * 30 + 15);
 
-// ? clear
-// localStorage.clear();
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let strId = '';
+    for (let i = 0; i < generateIdLength; i++) {
+        const generateChar = Math.floor(Math.random() * 32);
 
-// Todo Project
-const todoForm = document.querySelector("#todoForm");
-const todosListEl = document.querySelector("#todosList");
-const completedTodosListEl = document.querySelector("#completedTodos");
+        strId += characters[generateChar];
+    }
+    strId = strId.toLowerCase();
 
-let todos = [];
-const localTodosJSON = localStorage.getItem("LocalTodos");
-const todoData = JSON.parse(localTodosJSON);
-if (todoData) {
-    todos = todoData;
-}else {
-    todos = [];
+    const isGeneratingId = generateIds.findIndex((id) => id.strId == strId);
+    if (isGeneratingId == -1) {
+        return {
+            id: generateIds.length,
+            strId
+        };
+    } else {
+        generateId();
+    }
 }
 
-renderTodos(todos);
+// * Render functions
+function render(where, data) {
+    switch (where) {
+        case 'members': {
+            membersEl.innerHTML = '';
+            data.forEach(member => {
+                const { firstName, lastName, birthday, id } = member;
+                const template = `
+                    <div class="w-[400px] p-4 bg-white text-[#333] flex flex-col rounded-[15px]">
+                        <h4>Firstname: <span>${firstName}</span></h4>
+                        <h4>Lastname: <span>${lastName}</span></h4>
+                        <h4>Birthday: <span>${birthday}</span></h4>
 
-todoForm.addEventListener('submit', (event) => {
-    event.preventDefault();
+                        <div class="self-end">
+                            <button onclick="editMember(${id}, saveEditMember)" class="inline-block rounded bg-warning px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#e4a11b] transition duration-150 ease-in-out hover:bg-warning-600 hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:bg-warning-600 focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:outline-none focus:ring-0 active:bg-warning-700 active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(228,161,27,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)]">
+                                edit
+                            </button>
 
-    // get value form inputs
-    const taskInput = event.target[0];
-    const timeInput = event.target[1];
+                            <button onclick="userInfoRender(${id})" class="inline-block rounded bg-blue-500 text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-blue-600 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-blue-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-blue-700 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0">More</button>
+                            
+                            <button  onclick="deleteMember(${id})" class="inline-block rounded bg-danger px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#dc4c64] transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:bg-danger-600 focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:outline-none focus:ring-0 active:bg-danger-700 active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(220,76,100,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)]">
+                                delete
+                            </button>
+                        </div>
+                    </div>
+                `
+                membersEl.innerHTML += template;
+            });
+            break;
+        }
 
-    // Current date
-    const date = new Date();
+        case 'select': {
+            userSelect.innerHTML = `<option value=".">Select user</option>`;
+            data.forEach(member => {
+                const { firstName, lastName, id } = member;
+                const template = `
+                    <option value="${id}">${firstName} ${lastName}</option>
+                `
 
-    // Creating todo object
-    const todo = {
-        id: todos.length,
-        task: taskInput.value,
-        time: timeInput.value.split("T").join(" "),
-        completed: false,
-        isEditing: false,
-        createAt: `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate}}`
+                userSelect.innerHTML += template;
+            });
+            break;
+        }
+    }
+}
+
+// ! GYM App Functions
+
+// * Render members window onload
+render('members', members);
+render('select', members);
+
+// Database
+class CreateMember {
+    constructor(firstName, lastName, birthday) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthday = birthday;
+        this.createdAt = new Date();
+        this.updatedAt = new Date();
     }
 
-    // Add todo to todos array
-    todos.push(todo);
-    console.log(todos);
-    localStorage.setItem('LocalTodos', JSON.stringify(todos));
-
-    // Make inputs empty
-    taskInput.value = "";
-    timeInput.value = "";
-
-    renderTodos(todos);
-})
-
-function renderTodos(todos) {
-    todosListEl.innerHTML = "";
-    completedTodosListEl.innerHTML = "";
-
-    todos.forEach((todo, id) => {
-        const template = todo.isEditing ? `
-        <li class="list-group-item d-flex justify-content-between " ondblclick="editTodo('${id}', 'isEditing')">
-            <div class="d-flex ">
-                <input type="text" id="editInput" class="rounded-0 border border-1 ps-2 " value="${todo.task}">
-                <button class="btn btn-primary rounded-0 " onclick="editTodo('${id}', 'editTask')">save</button>
-            </div>
-
-            <div class="actions">
-                ${todo.completed ? `
-                    <button class="btn btn-success " onclick="editTodo('${id}', 'completed')">Not</button>
-                    ` : `
-                    <button class="btn btn-success " onclick="editTodo('${id}', 'completed')">Done</button>
-                    `
-                }
-                <button class="btn btn-danger " onclick="deleteTodo('${id}')">Delete</button>
-            </div>
-        </li>
-        ` : `
-        <li class="list-group-item d-flex justify-content-between " ondblclick="editTodo('${id}', 'isEditing')">
-            <span>${todo.task}</span>
-            <span>${todo.time}</span>
-        </li>
-        `
-
-        if (todo.completed) {
-            completedTodosListEl.innerHTML += template;
-        } else {
-            todosListEl.innerHTML += template;
+    save() {
+        const id = generateId();
+        const member = {
+            id: id.strId,
+            ...this
         }
-    });
+
+        //* Add member to database members
+        members.push(member);
+        // Push local storage
+        localStorage.setItem('members', JSON.stringify(members));
+        // save id
+        generateIds.push(id);
+        localStorage.setItem('generateIds', JSON.stringify(generateIds));
+    }
 }
 
-function editTodo(id, type) {
-    todos.map((todo) => {
-        todo.isEditing ? todo.isEditing = false : '';
-    })
+class CreateMemberCash {
+    constructor(select, from, to, price) {
+        this.select = select;
+        this.from = from;
+        this.to = to;
+        this.price = price;
+        this.createdAt = new Date();
+        this.updatedAt = new Date();
+    }
 
-    const editInput = document.getElementById('editInput');
-    const newTodos = todos.map((todo, index) => {
-        if (id == index) {
-            todo[type] = !todo[type];
-
-            if (type == 'completed' && todo.isEditing) {
-                todo.isEditing = false;
-            }
-
-            if (type == 'editTask') {
-                todo.task = editInput.value;
-                todo.isEditing = false;
-            }
-            return todo;
-        } else {
-            return todo;
+    save() {
+        const id = generateId();
+        const memberCash = {
+            id: id.strId,
+            ...this
         }
-    })
 
-    todos = newTodos;
-    localStorage.setItem('LocalTodos', JSON.stringify(todos));
-    renderTodos(todos);
+        //* Add memberCash to database membership
+        membersShip.push(memberCash);
+        // Push local storage
+        localStorage.setItem('membersShip', JSON.stringify(membersShip));
+        // save id
+        generateIds.push(id);
+        localStorage.setItem('generateIds', JSON.stringify(generateIds));
+    }
 }
 
-function deleteTodo(id) {
-    let newTodo = [];
-    todos.forEach((todo, index) => {
-        if (id != index) {
-            newTodo.push(todo);
-        }
-    });
-    todos = newTodo;
-    localStorage.setItem('LocalTodos', JSON.stringify(todos));
-    console.log(todos);
-    renderTodos(todos);
-}
+// todo Add member
+formEl.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const firstName = e.target[0];
+    const lastName = e.target[1];
+    const birthday = e.target[2];
 
+    if (!(firstName.value.includes(" ") || lastName.value.includes(" ") || birthday.value.includes(" "))) {
+        const newMember = new CreateMember(firstName.value, lastName.value, birthday.value);
+        newMember.save();
+        render('members', members);
 
-if("serviceWorker" in navigator) {
-    window.addEventListener("load", function() {
-        navigator.serviceWorker.register("/serviceWorker.js")
-    })
-}
+        firstName.value = "";
+        lastName.value = "";
+        birthday.value = "";
+    } else {
+        alert("Please enter a valid name or birthday");
+    }
+});
+
+// todo add member's payments
+formCash.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let select = e.target[0];
+    let from = e.target[1];
+    let to = e.target[2];
+    let price = e.target[3];
+
+    if (select.value != ".") {
+        const memberCash = new CreateMemberCash(select.value, from.value, to.value, price.value);
+        memberCash.save();
+        console.log(memberCash);
+    }else {
+        alert("Please select a member");
+    }
+});
