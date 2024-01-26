@@ -1,0 +1,19 @@
+.animation__box {
+    @include anim_box;
+
+    @include box-animation(3s) {
+        0% {
+            scale: 0.3;
+            background-color: green;
+            border-radius: 100%;
+        }
+        30% {
+            background-color: yellow;
+        }
+        100% {
+            scale: 1;
+            background-color: red;
+            border-radius: 0%;
+        }
+    }
+}

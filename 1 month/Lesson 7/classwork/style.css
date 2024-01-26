@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* .box {
+    content: "";
+    width: 50px;
+    height: 5px;
+    background-color: black;
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 20px;
+}
+
+.box::after {
+    content: "";
+    width: 50px;
+    height: 5px;
+    background-color: black;
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 20px;
+} */
+
+/* .info::first-letter {
+    font-size: 30px;
+    font-weight: bold;
+} */
+
+/* ::marker {
+    color: blue;
+    font-size: 1.2em;
+} */
+
+/* .btn:active {
+    color: red;
+    background-color: blue;
+} */
+
+/* .btn:focus {
+    border: 1px solid red;
+    outline: none;
+} */
+
+/* ul > li:nth-child(3), ul > li:nth-child(4) {
+    color: red;
+} */
+
+/* ul > li:first-child {
+    color: blue;
+}
+
+ul li:last-child {
+    color: blue;
+} */
+
+/* ul > li:nth-child(even) {
+    color: red; 
+}
+
+ul > li:nth-child(odd) {
+    color: blue; 
+} */
+
+/* ul > li:nth-child(odd):not(:first-child) {
+    color: blue;
+} */
+
+/* .btn {
+    color: darkblue;
+    background-color: white;
+    border: 1px solid darkblue;
+    border-radius: 20px;
+    transform: translateX(100px) translateY(100px) scale(1) rotate(360deg);
+    transition: all .3s ease;
+}
+
+.btn:hover {
+    color: white;
+    background-color: darkblue;
+} */
+
+/* .btn:focus {
+    transform: translateX(0) translateY(0) scale(1) rotate(0);
+} */
+
+/* @keyframes rotate {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0);
+        background-color: red;
+    }
+} */
+
+/* @keyframes rotate {
+    0% {
+        background-color: red;
+        transform: translateX(calc(10vw - 100%)) translateY(100%) scale(1);
+    }
+    20% {
+        background-color: black;
+    }
+    50% {
+        background-color: yellowgreen;
+    }
+    70% {
+        background-color: orange;
+    }
+    100% {
+        background-color: none;
+        transform: translateX(0) translateY(0) scale(1);
+    }
+} */
+
+/*.btn {
+    background-color: black;
+    animation-name: rotate;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-delay: 5s;
+    animation-fill-mode: backwards; 
+    animation: rotate 3s ease-in 1s forwards; 
+ } */
+
+ #animateBtn {
+    font-style: 22px;
+ }
+
+ .box {
+    margin-top: 40px;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    transform: translateX(calc(100vw - 100%));
+    transition: all 0.3s ease;
+ }
+
+ #animate {
+    visibility: hidden;
+ }
+
+ #animate:checked + .box {
+    transform: translateX(0);
+ }

@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.animeBox1 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.animate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15rem;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.animeBox1 .box:nth-child(1) {
+    background-color: rgb(13, 169, 13);
+    transform: rotate(0);
+}
+
+.animeBox1 .box:nth-child(2) {
+    background-color: rgb(255, 25, 0);
+    transform: rotate(0deg);
+}
+
+.animeBox1 input {
+    visibility: hidden;
+}
+
+.animeBox1 label {
+    font-size: 22px;
+    padding: 5px;
+    background-color: brown;
+    cursor: pointer;
+    user-select: none;
+}
+
+.animeBox1 #check:checked + .animate .box {
+    animation: rotate 0.5s linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+/* ! animeBox2*/
+
+.animeBox2 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.animeBox2 .box2 {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    background-color: rgb(26, 255, 26);
+    transform: scale(1);
+    /*  */
+}
+
+
+#check2 {
+    visibility: hidden;
+    
+}
+
+.animeBox2 label {
+    font-size: 22px;
+    padding: 5px;
+    background-color: brown;
+    cursor: pointer;
+    user-select: none;
+}
+
+
+#check2:checked + .box2 {
+    animation: scale 1s ease-in;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ! anime box 3 */
+.animeBox3 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.box3 {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    background-color: rgb(26, 255, 26);
+    animation: inf 2s linear infinite;
+}
+
+@keyframes inf {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

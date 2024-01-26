@@ -1,0 +1,129 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Varta', sans-serif;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header {
+    padding: 70px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.header__wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 32px;
+}
+
+.logo {
+    color: #a06056;
+    font-feature-settings: "clig" off, "liga" off;
+    font-family: serif;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 2px;
+}
+
+.header__list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 24px;
+}
+
+.header__list-item {
+    font-feature-settings: "clig" off, "liga" off;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+}
+
+.header__list-item a {
+    color: #706458;
+}
+
+
+.hero {
+    position: relative;
+    height: 100vh;
+}
+
+.hero__wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.hero__content>h2 {
+    color: var(--Terracotta, #A06056);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: 'Varta', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    /* 142.857% */
+    letter-spacing: 1px;
+}
+
+.hero__content>h3 {
+    margin: 50px 0 30px;
+    max-width: 400px;
+    color: var(--Terracotta, #A06056);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: 'Merriweather';
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 70px;
+    /* 140% */
+    letter-spacing: -0.4px;
+}
+
+.hero__content>p {
+    max-width: 360px;
+    color: var(--Brown-Light, rgba(112, 100, 88, 0.90));
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Varta;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 30.8px;
+    /* 140% */
+}
+
+.hero__bg {
+    background-image: url('../images/bg__hero.jpg');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 100%; 
+}

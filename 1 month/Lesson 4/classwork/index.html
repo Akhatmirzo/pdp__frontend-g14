@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sign up</h1>
+    <form action="about.html" method="POST" autocomplete="off" target="_blank">
+        <label for="firstname">
+            First Name
+            <input type="text" id="firstname" placeholder="firstname">
+        </label>
+
+        <!-- <input type="number" min="0" max="1000" value="100">
+        <input type="tel">
+        <input type="color">
+        <input type="date">
+        <input type="time">
+        <input type="datetime-local">
+        <input type="email" name="email">
+        <input type="password" name="password"> -->
+
+        <select name="category" id="car">
+            <option value="GM">General Motors</option>
+            <option value="BMW">BMW</option>
+            <option value="TESLA">TESLA</option>
+            <option value="BYD">Build Your Dreams</option>
+        </select>
+
+        <br>
+        <label for="male">
+            <input type="radio" id="male" name="gender">
+        </label>
+        <label for="female">
+            <input type="radio" id="female" name="gender">
+        </label>
+        <label for="other">
+            <input type="radio" id="other" name="gender">
+        </label>
+
+        <br>
+
+        <label for="married">
+            <input type="checkbox" name="married" id="married" checked>
+            Are you married?
+        </label>
+        <label for="house">
+            <input type="checkbox" name="house" id="house" disabled>
+            Do you have house?
+        </label>
+
+        <button type="reset">Clear</button>
+        <input type="submit" value="Sign up">
+        <!-- <button type="submit">Sign up</button> -->
+    </form>
+</body>
+</html>

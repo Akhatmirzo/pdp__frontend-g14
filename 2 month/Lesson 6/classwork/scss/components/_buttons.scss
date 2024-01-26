@@ -1,0 +1,19 @@
+.btn {
+    @include button;
+
+    @include mobile() {
+        background-color: red
+    }
+
+    @include tablet() {
+        background-color: green;
+    }
+
+    @include media(1200px, 1500px) {
+        background-color: blue;
+    }
+}
+
+.btn2 {
+    @include button(black, white);
+}

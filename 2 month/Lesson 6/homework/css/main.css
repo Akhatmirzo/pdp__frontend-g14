@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animation__box {
+  width: 400px;
+  height: 400px;
+  background-color: transparent;
+  border: 1px solid #333;
+  animation-name: box-ucassjd;
+  animation-duration: 3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+@keyframes box-ucassjd {
+  0% {
+    scale: 0.3;
+    background-color: green;
+    border-radius: 100%;
+  }
+  30% {
+    background-color: yellow;
+  }
+  100% {
+    scale: 1;
+    background-color: red;
+    border-radius: 0%;
+  }
+}/*# sourceMappingURL=main.css.map */

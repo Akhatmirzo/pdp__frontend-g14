@@ -1,0 +1,290 @@
+@media screen and (max-width: 991px) {
+    .container {
+        padding: 0 30px;
+    }
+    
+    nav {
+        padding: 20px 0;
+        gap: 1rem;
+    }
+
+    .nav_links {
+        display: none;
+    }
+
+    .nav_controls {
+        justify-content: end;
+    }
+
+    .nav_basket {
+        gap: 1rem;
+    }
+
+    .user_img {
+        width: 35px;
+    }
+
+    .big_Text {
+        width: 100%;
+        font-size: 2.1em;
+    }
+
+    .menu_hamburger {
+        display: block;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    del {
+        z-index: -1;
+    }
+
+    .thumbnail_img {
+        z-index: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 30px;
+    }
+    
+    nav {
+        padding: 20px 0;
+    }
+
+    .nav_links {
+        display: none;
+    }
+
+    .nav_controls {
+        justify-content: end;
+    }
+
+    .nav_basket {
+        gap: 1rem;
+    }
+
+    .user_img {
+        width: 35px;
+    }
+
+    .products {
+        margin-top: 0;
+    }
+
+    .big_Text {
+        font-size: 1.8em;
+    }
+
+    .info p {
+        width: 100%;
+    }
+    
+    .order_number {
+        width: 100%;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .order_add_basket {
+        width: 100%;
+        padding: 10px 15px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    
+    nav {
+        padding: 20px 0;
+    }
+
+    .nav_links {
+        display: none;
+    }
+
+    .nav_line {
+        display: none;
+    }
+
+    .nav_controls {
+        justify-content: end;
+    }
+
+    .nav_basket {
+        gap: 1rem;
+    }
+
+    .user_img {
+        width: 35px;
+    }
+
+    .products {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .products_carusel {
+        width: 100%;
+
+    }
+
+    .product_info {
+        width: 100%;
+        text-align: center;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info p {
+        margin: 10px 0;
+    }
+
+    .big_Text {
+        font-size: 1.8em;
+    }
+
+    .info p {
+        width: 100%;
+    }
+    
+    .order_number {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .order_count {
+        width: 50%;
+        justify-content: center;
+    }
+
+    .order_add_basket {
+        width: 50%;
+        padding: 10px 15px;
+    }
+
+    .visibility {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 0;
+    }
+
+    header .container {
+        padding: 0 30px;
+    }
+    nav {
+        padding: 10px 0;
+    }
+
+    .nav_links {
+        display: none;
+    }
+
+    .nav_line {
+        display: none;
+    }
+
+    .nav_controls {
+        justify-content: end;
+    }
+
+    .nav_basket {
+        gap: 1rem;
+    }
+
+    .nav_basket_items {
+        width: 300px;
+        height: 200px;
+        top: 70px;
+    }
+
+    .user_img {
+        width: 35px;
+    }
+
+    .products {
+        flex-direction: column;
+        gap: 0rem;
+    }
+
+    .products_carusel {
+        width: 100%;
+    }
+
+    .visibility_img {
+        width: 100%;
+    }
+
+    .visibility_img img {
+        border-radius: 0;
+    }
+
+    .carusel_hero {
+        height: 45vh;
+    }
+
+    .thumbnail_img {
+        display: none;
+    }
+
+    .product_info {
+        width: 100%;
+        text-align: left;
+        padding: 5px 20px 20px;
+    }
+
+    .product_price {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .info p {
+        margin: 10px 0;
+    }
+
+    .big_Text {
+        width: 100%;
+        font-size: 1.7em;
+    }
+
+    .info p {
+        width: 100%;
+    }
+    
+    .order_number {
+        width: 100%;
+        flex-direction: column;
+        margin-top: 10px;
+        gap: 1rem;
+    }
+
+    .order_count {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .order_add_basket {
+        width: 100%;
+        padding: 10px 15px;
+    }
+}

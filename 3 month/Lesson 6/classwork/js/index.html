@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <main>
+        <section class="add__user-section">
+            <div class="container add__user-wrapper">
+
+                <div class="add__user-form">
+                    <div class="container add__user-form-wrap">
+                        <i class="fa-solid fa-xmark" style="color: #030303;" onclick="modalClose()"></i>
+
+                        <form name="forma">
+                            <label for="firstname">Firstname</label>
+                            <input type="text" name="nameText" id="firstname" placeholder="Firstname" required>
+
+                            <label for="lastname">Lastname</label>
+                            <input type="text" name="lastnameText" id="lastname" placeholder="Lastname" required>
+
+                            <label for="age">Age</label>
+                            <input type="number" name="ageNum" id="age" placeholder="Age" required>
+
+                            <label for="email">Email</label>
+                            <input type="email" name="emailText" id="email" placeholder="Email" required>
+
+                            <button type="button" id="addUserBtn">Add User</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="title-content">
+                    <h2 class="title">Basic Table Template</h2>
+
+                    <div class="control__btns">
+                        <button class="add__user-btn" onclick="modalOpen()">
+                            <i class="fa-solid fa-user-plus" style="color: #ffffff;"></i>
+                            Add User
+                        </button>
+                    </div>
+                </div>
+
+                <table class="user__table">
+                    <tbody>
+                        <tr>
+                            <th>T/r</th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Age</th>
+                            <th>Email Address</th>
+                            <th></th>
+                        </tr>
+                    </tbody>
+                    <!-- <tr class="user-info">
+                        <td>1</td>
+                        <td>Firstname</td>
+                        <td>Lastname</td>
+                        <td>Age</td>
+                        <td>Email Address</td>
+                        <td>
+                            <div>
+                                <span onclick="userDelete()">
+                                    <i class="fa-solid fa-trash fa-fade" style="color: #4A3AFF;"></i>
+                                </span>
+
+                                <span onclick="userEdit()"><i class="fa-solid fa-user-pen fa-bounce"></i></span>
+                            </div>
+                        </td>
+                    </tr> -->
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"
+        integrity="sha512-xgIrH5DRuEOcZK5cPtVXx/WSp5DTir2JNcKE5ahV2u51NCTD9UDxbQgZHYHVBlPc4H8tug6BZTYIl2RdA/X0Vg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

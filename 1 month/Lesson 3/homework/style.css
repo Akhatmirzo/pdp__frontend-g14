@@ -1,0 +1,593 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ! navbar */
+.navbar {
+    padding-left: 10%;
+    background-color: rgb(214, 222, 228);
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.navbar .userName {
+    font-weight: 900;
+    font-size: 5em;
+    line-height: 90%;
+}
+
+.navbar .userJob {
+    font-weight: 700;
+    font-size: 2em;
+    letter-spacing: 0.1vw;
+}
+
+.nav {
+    width: min-content;
+    background-color: rgb(37, 41, 51);
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+.nav ul {
+    display: flex;
+}
+
+.nav ul li {
+    list-style: none;
+    padding: 20px 0px;
+    overflow: hidden;
+}
+
+.nav ul li a {
+    display: flex;
+    text-decoration: none;
+    color: white;
+    font-size: 0.8em;
+    letter-spacing: 0.07vw;
+    border-right: 2px solid white;
+    padding: 10px 40px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.nav ul li:nth-child(6) a {
+    border-right: none;
+}
+
+.nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    background-color: white;
+    box-shadow: 13px 13px 5px rgba(255, 255, 255, 0.1);
+    bottom: 0;
+    left: -100%;
+    transition: all .5s ease-in-out;
+}
+
+.nav ul li a:hover::after {
+    left: 0;
+    transition: all .8s ease-in-out;
+}
+
+.nav ul li .active::after {
+    left: 0;
+}
+
+/* ! Hero */
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-left: 10%;
+    margin-top: 40px;
+}
+
+/* ! Hero Line */
+
+.nav_line {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+}
+
+.figure {
+    width: 18rem;
+    background-color: rgb(37, 41, 51);
+    transform: skew(-30deg);
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 10px 30px;
+    text-transform: uppercase;
+}
+
+.figure h2 {
+    position: relative;
+    transform: skew(30deg);
+    color: white;
+    letter-spacing: 0.1vw;
+}
+
+.line{
+    width: 100%;
+    height: 3px;
+    background-color: rgb(8, 195, 195);
+}
+
+/* ! home about */
+.home_about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.infos h2 {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    font-size: 1.3em;
+}
+
+.infos h2 span {
+    width: 60%;
+    font-size: 0.8em;
+    font-weight: 400;
+}
+
+.social_info {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.userDescription {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: 15%;
+}
+
+.userDescription img {
+    height: 100%;
+    border-radius: 15px;
+}
+
+.description {
+    width: 80%;
+    height: 200px;
+    overflow-x: hidden;
+}
+
+/* ! Icons */
+.social_icons {
+    margin-bottom: 1.5em;
+}
+
+.social_icons .fa-brands {
+    font-size: 2.2em;
+    margin-right: 15px;
+}
+
+/* ! Skills */
+.userSkills {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    user-select: none;
+}
+
+.Skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.circle {
+    width: 170px;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 15px solid rgb(5, 254, 21);
+    border-radius: 50%;
+}
+
+/* ! new skills style */
+.mobile_skills {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 50px;
+    padding-right: 15px;
+}
+
+.mb_skills {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: start;
+    justify-content: center;
+}
+
+.mb_skills .text {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.skill_box {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #ccc;
+    background-color: antiquewhite;
+}
+
+.process {
+    height: 100%;
+    background-color: aqua;
+}
+
+.mb_skills:nth-child(1) .process {
+    animation: firstAnim 3s ease-in-out;
+    width: 60%;
+}
+
+.video-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+iframe {
+    width: 40% !important;
+    height: 400px;
+}
+
+@keyframes firstAnim {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 60%;
+    }
+}
+
+.mb_skills:nth-child(2) .process {
+    animation: secondAnim 3s ease-in-out;
+    width: 5%;
+}
+
+@keyframes secondAnim {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 5%;
+    }
+}
+
+.mb_skills:nth-child(3) .process {
+    animation: thirdAnim 3s ease-in-out;
+    width: 55%;
+}
+
+@keyframes thirdAnim {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 55%;
+    }
+}
+
+.mb_skills:nth-child(4) .process {
+    animation: fourAnim 3s ease-in-out;
+    width: 40%;
+}
+
+@keyframes fourAnim {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 40%;
+    }
+}
+
+/* ! responsive 991 */
+
+@media screen and (max-width: 991px) {
+    .navbar {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 20px;
+    }
+    
+    .navbar .userName {
+        font-size: 3.5em;
+    }
+    
+    .navbar .userJob {
+        font-size: 1.5em;
+    }
+    
+    .nav ul li {
+        list-style: none;
+        padding: 10px 0px;
+        overflow: hidden;
+    }
+    
+    .nav ul li a {
+        font-size: 0.8em;
+        padding: 10px 20px;
+    }
+    
+    .nav ul li a:hover::after {
+        left: 0;
+        transition: all .8s ease-in-out;
+    }
+    
+    /* ! Hero */
+    .hero {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-top: 40px;
+    }
+    
+    /* ! Hero Line */
+    
+    .nav_line {
+        gap: 2rem;
+    }
+    
+    .figure {
+        width: 12rem;
+        padding: 10px 20px;
+    }
+
+    .figure h2 {
+        font-size: 18px;
+    }
+    
+    .line{
+        width: 100%;
+        height: 3px;
+        background-color: rgb(8, 195, 195);
+    }
+    
+    /* ! home about */
+    .infos h2 {
+        width: 200px;
+        gap: 0.5rem;
+        font-size: 1em;
+    }
+    
+    .infos h2 span {
+        width: 60%;
+        font-size: 0.8em;
+        font-weight: 400;
+    }
+    
+    .social_info {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .userDescription {
+        width: 100%;
+        height: 200px;
+        gap: 1.5rem;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    
+    .userDescription img {
+        height: 100%;
+        border-radius: 15px;
+    }
+
+    .description {
+        width: 80%;
+        height: 200px;
+        overflow-x: hidden;
+    }
+
+    .description::-webkit-scrollbar {
+        width: 0;
+    }
+    
+    .description p {
+        width: 100%;
+        font-size: 16px;
+        text-align: justify;
+    }
+    
+    /* ! Icons */
+    .social_icons {
+        margin-bottom: 1em;
+    }
+    
+    .social_icons .fa-brands {
+        font-size: 2em;
+        margin-right: 15px;
+    }
+    
+    /* ! Skills */
+    .userSkills {
+        gap: 3rem;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+    
+    .Skill {
+        gap: 1rem;
+    }
+    
+    .circle {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* ! responsive 991 */
+
+@media screen and (max-width: 767px) {
+    
+    .navbar .userName {
+        font-size: 3em;
+    }
+    
+    .navbar .userJob {
+        font-size: 1em;
+    }
+
+    .nav {
+        display: none;
+    }
+    
+    /* ! Hero */
+    .hero {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-top: 20px;
+    }
+    
+    /* ! Hero Line */
+    
+    .nav_line {
+        gap: 0;
+    }
+    
+    .figure {
+        width: 12rem;
+        padding: 10px 20px;
+    }
+
+    .figure h2 {
+        font-size: 16px;
+    }
+    
+    .line{
+        width: 100%;
+        height: 3px;
+        background-color: rgb(8, 195, 195);
+    }
+    
+    /* ! home about */
+    .home_about {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+    
+    .infos {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .infos h2 {
+        width: 200px;
+        gap: 0.5rem;
+        font-size: 1em;
+    }
+    
+    .infos h2 span {
+        width: 60%;
+        font-size: 0.8em;
+        font-weight: 400;
+    }
+    
+    .social_info {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .social_icons {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .userDescription {
+        width: 100%;
+        height: 200px;
+        gap: 1.5rem;
+        margin-left: 15px;
+        margin-right: 15px;
+        align-items: start;
+    }
+    
+    .userDescription img {
+        width: 150px;
+        height: 100%;
+        border-radius: 15px;
+        object-fit: cover;
+    }
+
+    .description {
+        width: 80%;
+        height: 200px;
+        overflow-x: hidden;
+    }
+
+    .description::-webkit-scrollbar {
+        width: 0;
+    }
+    
+    .description p {
+        width: 100%;
+        font-size: 16px;
+        text-align: justify;
+    }
+    
+    /* ! Icons */
+    .social_icons {
+        margin-bottom: 1em;
+    }
+    
+    .social_icons .fa-brands {
+        font-size: 2em;
+        margin-right: 15px;
+    }
+    
+    /* ! Skills */
+    .skill_box {
+        height: 20px;
+    }
+
+    .video-content {
+        flex-direction: column;
+    }
+
+    .video-content iframe {
+        width: 100%;
+        
+    }
+}
+

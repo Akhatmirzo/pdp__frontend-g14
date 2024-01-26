@@ -1,0 +1,74 @@
+
+// $primaryColor: red;
+// $borderStyle: (
+//     width: 1px,
+//     style: solid,
+//     color: red,
+// );
+
+
+// .btn {
+//     margin: 50px;
+//     display: inline-block;
+//     color: black;
+//     text-decoration: none;
+//     padding: 15px 32px; 
+//     background-color: lightblue;
+//     @each $key, $value in $borderStyle {
+//         border-#{$key}: $value;
+//     }
+//     border-radius: 5px;
+//     transition: all 0.3s ease;
+
+//     &:hover {
+//         color: white;
+//         background-color: black;
+//     }
+// }
+
+// .parent {
+//     display: flex;
+//     justify-content: center;
+
+//     &__child {
+//         background-color: blue;
+
+//         &-info {
+//             color: white;
+//         }
+//     }
+// }
+
+
+// .heading {
+//     color: red;
+// }
+
+// .box {
+//     display: flex;
+//     font-size: 20px;
+// }
+
+// .box {
+//     color: $primaryColor;
+// }
+
+// .parent {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+
+//     .child {
+//         width: 100px;
+//         height: 100px;
+//         background-color: $primaryColor;
+
+//         h1 {
+//             color: blue;
+//         }
+//     }
+// }
+
+// .parent .child {
+//     background-color: blue;
+// }

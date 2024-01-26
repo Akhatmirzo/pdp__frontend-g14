@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 100px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 12px 25px;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background-color: white;
+  color: black;
+}
+@media screen and (max-width: 767px) {
+  .btn {
+    background-color: red;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .btn {
+    background-color: green;
+  }
+}
+@media screen and (min-width: 1200px) and (max-width: 1500px) {
+  .btn {
+    background-color: blue;
+  }
+}
+
+.btn2 {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 12px 25px;
+  transition: all 0.3s ease;
+}
+.btn2:hover {
+  background-color: black;
+  color: white;
+}/*# sourceMappingURL=main.css.map */

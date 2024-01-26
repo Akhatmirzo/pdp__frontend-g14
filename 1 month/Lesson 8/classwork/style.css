@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800;900;1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.btn {
+    width: 200px;
+    height: 56px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 55px;
+    border: 1px solid #458FF6;
+    transition: all 0.3s ease;
+    background: white;
+    color: #458FF6;
+}
+
+.btn:hover {
+    background: #458FF6;
+    color: white;
+}
+
+/* ! article section */
+.article__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 227px;
+}
+
+.article__section__title {
+    margin-bottom: 70px;
+}
+
+.article__section__cards {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+.article__card {
+    width: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+    list-style: none;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.article__hero__image {
+    width: 100%;
+}
+
+.article__info {
+    padding: 21px 66px 35px 33px;
+}
+
+.article__info>h3 {
+    color: #000;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.article__info>p {
+    color: #7D7987;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 28px;
+    margin: 12px 0 25px;
+}
+
+.info__btn {
+    color: #4089ED;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.article__btn {
+    margin: 72px 0 202px;
+}
+
+/* ! End of */
+
+
+
+
+
+
+
+
+
+
+
+
+/* {
+    margin: 0;
+    padding: 0;
+}
+
+.parent {
+    height: 100vh;
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; 
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.child {
+    width: 350px;
+    height: 312px;
+    background-color: red;
+    border: 1px solid black;
+}
+
+.child:nth-child(even) {
+    align-self: flex-start;
+} */
+
+/* .box {
+    width: 400px;
+    display: inline-block;
+}
+
+.box {
+    display: none;
+} */
+
+/* a {
+    display: block;
+} */

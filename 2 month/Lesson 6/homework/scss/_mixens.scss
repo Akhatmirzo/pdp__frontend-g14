@@ -1,0 +1,19 @@
+@mixin anim_box() {
+    width: 400px;
+    height: 400px;
+    background-color: transparent;
+    border: 1px solid #333;
+}
+
+@mixin box-animation ($duration) {
+    $name: box-#{unique-id()};
+
+    @keyframes #{$name} {
+        @content;
+    }
+
+    animation-name: $name;
+    animation-duration: $duration;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}

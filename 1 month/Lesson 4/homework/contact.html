@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./contact.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="userName">Umarov Akhatmirzo</h1>
+        <h2 class="userJob">Frontend Developer</h2>
+
+        <div class="nav">
+            <ul>
+                <li>
+                    <a href="index.html" >Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Skills</a>
+                </li>
+                <li>
+                    <a href="#">experince</a>
+                </li>
+                <li>
+                    <a href="#">education</a>
+                </li>
+                <li>
+                    <a href="./contact.html" class="active">contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <article>
+        <div class="contactBox">
+            <h2>Biz bilan bog'laning!</h2>
+            <form action="./index.html">
+                <label for="firstName">
+                    First Name:
+                    <input type="text" id="firstName" name="firstName" placeholder="John">
+                </label>
+                <label for="LastName">
+                    Last Name:
+                    <input type="text" id="LastName" name="LastName" placeholder="Gib">
+                </label>
+                <label for="email">
+                    Email:
+                    <input type="email" id="email" name="email" placeholder="user@gmail.com">
+                </label>
+                <label for="phone">
+                    Phone number:
+                    <input type="tel" id="phone" name="phone" placeholder="+8978451232365">
+                </label>
+                <label for="age">
+                    Yoshingiz:
+                    <input type="number" id="age" name="age" placeholder="26">
+                </label>
+                <label for="gender">
+                    Erkak
+                    <input type="radio" id="male" name="gender">
+                    Ayol
+                    <input type="radio" id="female" name="gender">  
+                </label>
+                <label for="birth">
+                    Tug'ulgan kuningiz:
+                    <input type="date" name="birth" id="birth">
+                </label>
+                
+                <label for="manzil">
+                    Yashash joyingiz:
+                    <select name="manzil" id="manzil">
+                        <option value="Toshkent">Toshkent</option>
+                        <option value="Andijon">Andijon</option>
+                        <option value="Buxoro">Buxoro</option>
+                        <option value="Farg'ona">Farg'ona</option>
+                        <option value="Jizzax">Jizzax</option>
+                        <option value="Namangan">Namangan</option>
+                        <option value="Samarqand">Samarqand</option>
+                        <option value="Sirdaryo">Sirdaryo</option>
+                        <option value="Surxondaryo">Surxondaryo</option>
+                        <option value="boshqa">Boshqa</option>
+                    </select>
+                </label>
+
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </article>
+</body>
+</html>

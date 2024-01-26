@@ -1,0 +1,33 @@
+@mixin button($color: white, $bg: black, $borderColor: black) {
+    display: inline-block;
+    text-decoration: none;
+    color: $color;
+    background-color: $bg;
+    border: 1px solid $borderColor;
+    border-radius: 10px;
+    padding: 12px 25px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: $color;
+        color: $bg;
+    }
+}
+
+@mixin mobile() {
+    @media screen and (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin tablet() {
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin media($min, $max) {
+    @media screen and (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}

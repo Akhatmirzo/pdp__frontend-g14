@@ -1,0 +1,96 @@
+/** Selectors  */
+/** Tagname  */
+/* h1 {
+    color: blue;
+} */
+
+/** Class */
+/* .info {
+    color: purple;
+} */
+
+/** Id */
+/* #info {
+    color: aqua;
+} */
+
+/** Attribute */
+/* h1[title="hello"] {
+    color: red;
+} */
+
+/** Universal selector */
+/* * {
+    color: red;
+} */
+
+/* #info {
+    color: blue;
+}
+
+.info {
+    color: red !important;
+} */
+
+/* .infoSecondary {
+    color: blue !important;
+} */
+
+/* #info {
+    color: red;
+} */
+
+/* .info {
+    color: blue;
+} */
+
+/* .text {
+    text-align: justify;
+    text-indent: 20px;
+    font-size: 20px;
+    line-height: 2;
+    text-shadow: -5px -5px 4px red;
+    letter-spacing: 10px;
+    text-decoration: line-through;
+    text-transform: uppercase;
+} */
+
+/* .link {
+    text-decoration: none;
+    color: black; 
+}*/
+
+/* .btn {
+    width: 40px;
+    white-space: nowrap;
+} */
+
+/* .text {
+    width: 70%;
+    opacity: 20%;
+    overflow: scroll;
+    color: red;
+    text-align: center;
+    border-color: red;
+    border-width: 2px;
+    border-style: dashed;
+    border: 1px solid black;
+    visibility: hidden;
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+} */
+
+.text {
+    font-weight: 900;
+    font-style: italic;
+    color: white;
+    background-color: blue;
+    transition: all 0.5s ease;
+}
+
+.text:hover {
+    color: black;
+    background-color: white;
+    text-decoration: underline;
+}
