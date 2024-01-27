@@ -4,6 +4,9 @@ const formCash = document.getElementById('formCash');
 const info = document.getElementById('info');
 const editModalEl = document.querySelector('.editModal');
 const userSelect = document.getElementById('userSelect');
+const editModalForm = document.querySelector('.editModalForm');
+const cashsInfo = document.getElementById('cashsInfo');
+const userInformationWrap = document.querySelector('.userInformationWrap');
 
 // Members Db
 const members = JSON.parse(localStorage.getItem('members')) || [];
@@ -50,13 +53,13 @@ function render(where, data) {
                         <h4>Birthday: <span>${birthday}</span></h4>
 
                         <div class="self-end">
-                            <button onclick="editMember(${id}, saveEditMember)" class="inline-block rounded bg-warning px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#e4a11b] transition duration-150 ease-in-out hover:bg-warning-600 hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:bg-warning-600 focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:outline-none focus:ring-0 active:bg-warning-700 active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(228,161,27,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)]">
+                            <button onclick="editMember('${id}')" class="inline-block rounded bg-warning px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#e4a11b] transition duration-150 ease-in-out hover:bg-warning-600 hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:bg-warning-600 focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:outline-none focus:ring-0 active:bg-warning-700 active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(228,161,27,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)]">
                                 edit
                             </button>
 
-                            <button onclick="userInfoRender(${id})" class="inline-block rounded bg-blue-500 text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-blue-600 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-blue-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-blue-700 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0">More</button>
+                            <button onclick="userInfoRender('${id}')" class="inline-block rounded bg-blue-500 text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-blue-600 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-blue-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-blue-700 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0">More</button>
                             
-                            <button  onclick="deleteMember(${id})" class="inline-block rounded bg-danger px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#dc4c64] transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:bg-danger-600 focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:outline-none focus:ring-0 active:bg-danger-700 active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(220,76,100,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)]">
+                            <button onclick="deleteMember('${id}')" class="inline-block rounded bg-danger px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#dc4c64] transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:bg-danger-600 focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:outline-none focus:ring-0 active:bg-danger-700 active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(220,76,100,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)]">
                                 delete
                             </button>
                         </div>
@@ -79,9 +82,12 @@ function render(where, data) {
             });
             break;
         }
+
+        case 'memberShip': {
+
+        }
     }
 }
-
 // ! GYM App Functions
 
 // * Render members window onload
@@ -113,11 +119,27 @@ class CreateMember {
         generateIds.push(id);
         localStorage.setItem('generateIds', JSON.stringify(generateIds));
     }
+
+    static delete(id) {
+        const index = members.findIndex(member => member.id == id);
+        const idIndex = generateIds.findIndex(ids => ids.strId == id);
+
+        if (index !== -1 && idIndex !== -1) {
+            members.splice(index, 1);
+            generateIds.splice(idIndex, 1);
+            localStorage.setItem('members', JSON.stringify(members));
+            localStorage.setItem('generateIds', JSON.stringify(generateIds));
+        }
+    }
+
+    static findById(id) {
+        return members.find(member => member.id == id);
+    }
 }
 
 class CreateMemberCash {
     constructor(select, from, to, price) {
-        this.select = select;
+        this.memberId = select;
         this.from = from;
         this.to = to;
         this.price = price;
@@ -140,6 +162,10 @@ class CreateMemberCash {
         generateIds.push(id);
         localStorage.setItem('generateIds', JSON.stringify(generateIds));
     }
+
+    static findById(id) {
+        return membersShip.filter(memberCash => memberCash.memberId == id);
+    }
 }
 
 // todo Add member
@@ -152,7 +178,9 @@ formEl.addEventListener('submit', (e) => {
     if (!(firstName.value.includes(" ") || lastName.value.includes(" ") || birthday.value.includes(" "))) {
         const newMember = new CreateMember(firstName.value, lastName.value, birthday.value);
         newMember.save();
+        
         render('members', members);
+        render('select', members);
 
         firstName.value = "";
         lastName.value = "";
@@ -174,7 +202,90 @@ formCash.addEventListener('submit', (e) => {
         const memberCash = new CreateMemberCash(select.value, from.value, to.value, price.value);
         memberCash.save();
         console.log(memberCash);
-    }else {
+
+        select.value = ".";
+        from.value = "";
+        to.value = "";
+        price.value = "";
+    } else {
         alert("Please select a member");
     }
 });
+
+// todo delete member
+function deleteMember(id) {
+    CreateMember.delete(id);
+    render('members', members);
+}
+
+// todo edit member
+function editMember(id, cb) {
+    editModalEl.classList.remove('hidden');
+    editModalEl.classList.add('flex');
+
+    let editMember = CreateMember.findById(id);
+
+    let firstNameV = editModalForm[0];
+    let lastNameV = editModalForm[1];
+    let birthdayV = editModalForm[2];
+
+    firstNameV.value = editMember.firstName;
+    lastNameV.value = editMember.lastName;
+    birthdayV.value = editMember.birthday;
+
+    if (!(firstNameV.value.includes(" ") || lastNameV.value.includes(" ") || birthdayV.value.includes(" "))) {
+        editModalForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            editMember.firstName = firstNameV.value;
+            editMember.lastName = lastNameV.value;
+            editMember.birthday = birthdayV.value;
+
+            localStorage.setItem('members', JSON.stringify(members));
+            render('members', members);
+            editModalEl.classList.add('hidden');
+        })
+    } else {
+        alert("Please enter a valid first name or last name");
+    }
+}
+
+// * Membership render
+function userInfoRender(id) {
+    cashsInfo.innerHTML = '';
+
+    const memberShip = CreateMemberCash.findById(id);
+    const member = CreateMember.findById(id);
+    const { firstName, lastName, birthday } = member;
+
+    memberShip.forEach((res, index) => {
+        const { from, to, price } = res;
+        const cashElTemplate = `
+        <tr>
+            <th class="border-2">${index + 1}</th>
+            <th class="border-2">${firstName} ${lastName}</th>
+            <th class="border-2">${from}</th>
+            <th class="border-2">${to}</th>
+            <th class="border-2"><span>$</span>${price}</th>
+        </tr>
+        `
+
+        cashsInfo.innerHTML += cashElTemplate;
+    });
+
+    userInformationWrap.classList.remove('hidden');
+    userInformationWrap.classList.add('flex');
+}
+
+// * Edit modal toogle
+function closeModal(type) {
+    switch (type) {
+        case "memberCashModalClosed":
+            userInformationWrap.classList.add('hidden');
+            userInformationWrap.classList.remove('flex');
+            break
+        case "editModalClosed":
+            editModalEl.classList.add('hidden');
+            break
+    }
+}
